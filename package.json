@@ -1,0 +1,21 @@
+{
+  "name": "pandaya-antares",
+  "version": "1.0.0",
+  "description": "Module to Send Data from Pandaya+ Device to Antares Cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pandaya+",
+    "antares",
+    "cloud"
+  ],
+  "author": "prajadimas",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "socket.io-client": "^2.3.0"
+  }
+}
