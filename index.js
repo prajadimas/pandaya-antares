@@ -3,6 +3,11 @@ const io = require('socket.io-client')
 require('dotenv').config()
 
 const socket = io('http://127.0.0.1:50105')
+var config = {
+	deviceId: process.env.DEVICEID,
+	userId: process.env.USERID,
+	userKey: process.env.USERKEY,
+}
 socket.on('connect', function () {
 	socket.emit('client', 'pandaya-antares')
 	socket.on('data', (data) => {
@@ -10,9 +15,9 @@ socket.on('connect', function () {
 		axios({
 			method: 'POST',
 			baseURL: 'https://platform.antares.id:8443/~/antares-cse/',
-			url: '/' + process.env.DEVICEID,
+			url: '/' + config.deviceId,
 			headers: {
-				'X-M2M-Origin': process.env.USERID + ':' + process.env.USERKEY,
+				'X-M2M-Origin': config.userId + ':' + config.userKey,
 				'Content-Type': 'application/json;ty=4',
 				'Accept': 'application/json'
 			},
